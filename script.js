@@ -1,9 +1,9 @@
 // script.js - JavaScript for Wheel of Fortune game
 
 document.addEventListener('DOMContentLoaded', () => {
-    const spinButton = document.querySelector('.spin-button');
-    const wheel = document.querySelector('.wheel');
-    const puzzleBoard = document.querySelector('.puzzle-board');
+    const spinButton = document.querySelector('.wheel .button');
+    const wheelImage = document.querySelector('.wheel img');
+    const lettersBoard = document.querySelector('.letters');
     const puzzlePhrase = "WHEEL OF FORTUNE";
     let revealedLetters = Array(puzzlePhrase.length).fill('_');
 
@@ -17,21 +17,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayPuzzle += revealedLetters[i] + ' ';
             }
         }
-        puzzleBoard.textContent = displayPuzzle.trim();
+        lettersBoard.textContent = displayPuzzle.trim();
     }
 
     setupPuzzle();
     
-    spinButton.addEventListener('click', () => {
+    spinButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent default link behavior
+
         // Disable the button while spinning
         spinButton.disabled = true;
 
         // Randomly determine the spin angle (between 720 and 1440 degrees)
         const spinAngle = Math.floor(Math.random() * 720) + 720;
         
-        // Rotate the wheel
-        wheel.style.transition = 'transform 3s ease-out';
-        wheel.style.transform = `rotate(${spinAngle}deg)`;
+        // Rotate the wheel image
+        wheelImage.style.transition = 'transform 3s ease-out';
+        wheelImage.style.transform = `rotate(${spinAngle}deg)`;
 
         // Re-enable the button after the spin completes
         setTimeout(() => {
