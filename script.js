@@ -3,6 +3,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     const spinButton = document.querySelector('.spin-button');
     const wheel = document.querySelector('.wheel');
+    const puzzleBoard = document.querySelector('.puzzle-board');
+    const puzzlePhrase = "WHEEL OF FORTUNE";
+    let revealedLetters = Array(puzzlePhrase.length).fill('_');
+
+    // Initialize the puzzle board
+    function setupPuzzle() {
+        let displayPuzzle = '';
+        for (let i = 0; i < puzzlePhrase.length; i++) {
+            if (puzzlePhrase[i] === ' ') {
+                displayPuzzle += '  '; // Add extra space for word gaps
+            } else {
+                displayPuzzle += revealedLetters[i] + ' ';
+            }
+        }
+        puzzleBoard.textContent = displayPuzzle.trim();
+    }
+
+    setupPuzzle();
     
     spinButton.addEventListener('click', () => {
         // Disable the button while spinning
