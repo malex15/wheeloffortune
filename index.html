@@ -1,133 +1,82 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheel of Fortune Game</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <title>Game Interface</title>
     <style>
-        /* Basic styling to ensure responsiveness */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .game-container {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            color: #444;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-
-        .wheel {
-            margin: 20px auto;
-            width: 300px;
-            height: 300px;
-            border: 10px solid #444;
-            border-radius: 50%;
-            background-image: conic-gradient(
-                #ffb74d 0deg 45deg, #ff8a65 45deg 90deg, #4db6ac 90deg 135deg,
-                #7986cb 135deg 180deg, #f06292 180deg 225deg, #ba68c8 225deg 270deg,
-                #4fc3f7 270deg 315deg, #aed581 315deg 360deg
-            );
-            position: relative;
-        }
-
-        .wheel-arrow {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 40px solid red;
-        }
-
-        .spin-button {
-            background-color: #f06292;
+            font-family: Arial, sans-serif;
+            background-color: #8a2be2;
             color: white;
-            border: none;
-            padding: 15px 25px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .wheel, .game-board {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #4b0082;
+            border-radius: 10px;
+        }
+        .button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
             margin-top: 20px;
         }
-
-        .spin-button:hover {
-            background-color: #e91e63;
+        .player {
+            flex: 1;
+            padding: 10px;
+            background-color: #333;
+            margin: 5px;
+            border-radius: 10px;
         }
-
-        .puzzle-board {
-            background-color: #f9f9f9;
-            border: 2px solid #ddd;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-
-        .how-to-play {
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 480px) {
-            .wheel {
-                width: 200px;
-                height: 200px;
-            }
-
-            .spin-button {
-                padding: 10px 15px;
-                font-size: 14px;
-            }
+        .letters, .phrase {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="game-container">
-        <h1>Wheel of Fortune Game</h1>
-
-        <div class="puzzle-setup">
-            <h2 class="section-title">Puzzle Set-Up</h2>
-            <div class="puzzle-board">
-                <p>_ _ _ _ _  _ _ _ _ _  _ _ _ _ _</p>
+    <div class="container">
+        <div class="wheel">
+            <h2>SPIN THE WHEEL</h2>
+            <div>
+                <!-- Placeholder for wheel graphic -->
+                <img src="wheel.png" alt="Wheel" width="300">
+            </div>
+            <a href="#" class="button">BEGIN</a>
+        </div>
+        
+        <div class="game-board">
+            <div class="scoreboard">
+                <div class="player">James<br>Score: 0</div>
+                <div class="player">Amelia<br>Score: 0</div>
+                <div class="player">Steve<br>Score: 0</div>
+                <div class="player">Katie<br>Score: 0</div>
+            </div>
+            <div class="letters">N_P _ L_C_</div>
+            <div class="phrase">Phrase</div>
+            <div>
+                <a href="#" class="button">SOLVE</a>
             </div>
         </div>
-
-        <div class="how-to-play">
-            <h2 class="section-title">How to Play</h2>
-            <p>Spin the wheel to reveal your fortune! Try to solve the puzzle by guessing letters correctly. Each spin gives you a chance to earn points, but be careful of losing a turn or going bankrupt!</p>
-        </div>
-
-        <div class="wheel">
-            <div class="wheel-arrow"></div>
-        </div>
-
-        <button class="spin-button">Spin the Wheel!</button>
     </div>
 </body>
 </html>
