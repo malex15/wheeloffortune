@@ -1,0 +1,50 @@
+/* styles.css - External stylesheet for Wheel of Fortune game */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #444;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.wheel {
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    border: 10px solid #444;
+    border-radius: 50%;
+    background-image: conic-gradient(
+        #ffb74d 0deg 45deg, #ff8a65 45deg 90deg, #4db6ac 90deg 135deg,
+        #7986cb 135deg 180deg, #f06292 180deg 225deg, #ba68c8 225deg 270deg,
+        #4fc3f7 270deg 315deg, #aed581 315deg 360deg
+    );
+    position: relative;
+}
+
+.wheel-arrow {
+    position: absolute;
+    top:
